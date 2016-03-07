@@ -1,10 +1,13 @@
 #ifndef _USERMANAGER
 #define _USERMANAGER
 
+#define UUIDLength 10
+#define MemorySize 4096 //Memory Siz in bytes
+
 typedef struct
 {
-  char UUID[14];
-  char Flags[2];
+  char UUID[UUIDLength];
+  char Flags[16-UUIDLength];
   char Dataset[16];
   unsigned int Loc; // Zero is invalid
 }User;
